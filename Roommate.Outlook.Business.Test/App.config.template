@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="ExchangeEmailAddress" value=""/>
+    <add key="ExchangeUsername" value=""/>
+    <add key="ExchangePassword" value=""/>
+    <add key="ExchangeDomain" value=""/>
+    <add key="ExchangeUrl" value=""/>
+    <add key="RoomEmailAddress" value=""/>
+  </appSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5.2" />
+  </startup>
+</configuration>
