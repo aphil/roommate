@@ -57,7 +57,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Roommate.Business\Roommate.Business.csproj">
+    <ProjectReference Include="..\Roommate.Business\Roommate.Business.csproj">
       <Project>{9a6fffa1-be41-48cb-b87b-452f57091b70}</Project>
       <Name>Roommate.Business</Name>
     </ProjectReference>

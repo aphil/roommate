@@ -54,11 +54,5 @@
     <None Include="App.config.template" />
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Roommate.Outlook.Business\Roommate.Outlook.Business\Roommate.Outlook.Business.csproj">
-      <Project>{47859fdc-cbe1-4e7a-9992-d0fdc6897e56}</Project>
-      <Name>Roommate.Outlook.Business</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
