@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16cae535-14a1-4c2d-b2cc-29025cf84055" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.Collection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="Roommate.Application.Shared" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:9001/AppointmentService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="9cae97f5-c160-463b-b0b4-5d14891f3524" SourceId="1" SourceUrl="net.tcp://localhost:9001/AppointmentService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="44c74911-57ab-4ab2-8239-d4b330167207" SourceId="1" SourceUrl="net.tcp://localhost:9001/AppointmentService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e651854c-e0bd-4415-86a3-641d51c29656" SourceId="1" SourceUrl="net.tcp://localhost:9001/AppointmentService/mex" />
+    <MetadataFile FileName="Roommate.Application.Shared.Appointment.xsd" MetadataType="Schema" ID="6678f468-50c2-417c-b9fd-db294e8690ef" SourceId="1" SourceUrl="net.tcp://localhost:9001/AppointmentService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

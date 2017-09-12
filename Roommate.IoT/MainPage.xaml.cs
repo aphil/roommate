@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TestUWP;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -15,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Roommate
+namespace App1
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -27,10 +28,15 @@ namespace Roommate
             this.InitializeComponent();
         }
 
-        private void ClickMe_Click(object sender, RoutedEventArgs e)
+        private void btnTest_Click(object sender, RoutedEventArgs e)
         {
+            Class1 cla = new Class1();
+            var task = cla.GetAppointments();
+            task.ContinueWith(x =>
+            {
+                var status = x.Status;
 
-            this.HelloMessage.Text = "Hello, Windows 10 IoT Core!";
+            });
         }
     }
 }

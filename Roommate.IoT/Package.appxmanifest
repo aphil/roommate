@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="0b65833d-107a-43a6-8ff1-5dc1f9a0c7ec"
+    Name="bab8ee68-56ee-4df2-8ce5-02a7478fdba6"
     Publisher="CN=aprac"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="0b65833d-107a-43a6-8ff1-5dc1f9a0c7ec" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="bab8ee68-56ee-4df2-8ce5-02a7478fdba6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Roommate</DisplayName>
+    <DisplayName>App1</DisplayName>
     <PublisherDisplayName>aprac</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Roommate.App">
+      EntryPoint="App1.App">
       <uap:VisualElements
-        DisplayName="Roommate"
+        DisplayName="App1"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Roommate"
+        Description="App1"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

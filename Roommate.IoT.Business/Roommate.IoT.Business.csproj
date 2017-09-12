@@ -11,6 +11,7 @@
     <AssemblyName>Roommate.IoT.Business</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetFrameworks>netstandard1.4;UAP,Version=v10.0.10240.0</TargetFrameworks>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
@@ -107,13 +108,57 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Connected Services\RoommateServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Roommate.Business.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>5.2.3</Version>
+      <Version>5.4.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RoommateServer\Roommate.Application.Shared.Appointment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RoommateServer\service.wsdl" />
+    <None Include="Connected Services\RoommateServer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RoommateServer\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Roommate.Application.Shared.Appointment.AppointmentUiModel.datasource" />
+    <None Include="Properties\DataSources\Roommate.Application.Shared.Appointment.AppointmentUiModel1.datasource" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RoommateServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RoommateServer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RoommateServer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RoommateServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roommate.Application.Shared\Roommate.Application.Shared.csproj">
+      <Project>{3ffbd476-accf-4451-bedc-67e3ae1c1d40}</Project>
+      <Name>Roommate.Application.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
