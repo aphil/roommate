@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using Roommate.Repository.Business;
+using Roommate.Repository.Outlook;
 
 namespace Roommate.Outlook.Business.Test
 {

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Exchange.WebServices.Data;
-using Roommate.Business.Calendar;
+using Roommate.Business.Appointments;
+using Roommate.Repository.Appointments;
+using Roommate.Repository.Outlook;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roommate.Outlook.Business
+namespace Roommate.Repository.Business
 {
-    public class EchangeCalendarProvider : ICalendarProvider
+    public class EchangeCalendarProvider : IAppointmentRepository
     {
         private IExchangeServiceInitializer _exchangeServiceInitializer;
         public EchangeCalendarProvider(IExchangeServiceInitializer exchangeServiceInitializer)
@@ -30,7 +32,7 @@ namespace Roommate.Outlook.Business
             FolderId folderid = new FolderId(WellKnownFolderName.Calendar, new Mailbox(ConfigurationManager.AppSettings["RoomEmailAddress"]));
 
             // Retrieve a collection of appointments by using the calendar view.
-            FindItemsResults<Appointment> appointments = service.FindAppointments(folderid, cView);
+            FindItemsResults<Microsoft.Exchange.WebServices.Data.Appointment> appointments = service.FindAppointments(folderid, cView);
 
             return appointments.Select(x => EntityFactory.CreateAppointment(x));
         }

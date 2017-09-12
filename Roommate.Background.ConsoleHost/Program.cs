@@ -1,4 +1,4 @@
-﻿using Roommate.Application.Appointment;
+﻿using Roommate.Application.Appointments;
 using System;
 using System.Collections.Generic;
 using System.Linq;

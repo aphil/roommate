@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roommate.Outlook.Business
+namespace Roommate.Repository.Outlook
 {
     public interface IExchangeServiceInitializer
     {

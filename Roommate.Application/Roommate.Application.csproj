@@ -11,6 +11,7 @@
     <AssemblyName>Roommate.Application</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,13 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointment\AppointmentService.cs" />
+    <Compile Include="Appointments\AppointmentFactory.cs" />
+    <Compile Include="Appointments\AppointmentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Roommate.Application.Shared\Roommate.Application.Shared.csproj">
       <Project>{3ffbd476-accf-4451-bedc-67e3ae1c1d40}</Project>
       <Name>Roommate.Application.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roommate.Business\Roommate.Business.csproj">
+      <Project>{9A6FFFA1-BE41-48CB-B87B-452F57091B70}</Project>
+      <Name>Roommate.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roommate.Repository\Roommate.Repository.csproj">
+      <Project>{76530071-3ad3-4837-b681-b4a7ddd5613c}</Project>
+      <Name>Roommate.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

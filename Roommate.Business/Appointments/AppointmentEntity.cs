@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roommate.Business.Calendar
+namespace Roommate.Business.Appointments
 {
-    [DataContract]
     public class AppointmentEntity
     {
         public AppointmentEntity()
-            : this(string.Empty, DateTime.MinValue, DateTime.MaxValue)
+        : this(string.Empty, DateTime.MinValue, DateTime.MaxValue)
         {
 
         }
@@ -23,15 +21,12 @@ namespace Roommate.Business.Calendar
             EndTime = endTime;
         }
 
-        [DataMember]
         public string Description
         { get; set; }
 
-        [DataMember]
         public DateTime StartTime
         { get; set; }
 
-        [DataMember]
         public DateTime EndTime
         { get; set; }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Exchange.WebServices.Data;
 using System.Configuration;
 
-namespace Roommate.Outlook.Business
+namespace Roommate.Repository.Outlook
 {
     public class ExchangeServiceInitializer : IExchangeServiceInitializer
     {

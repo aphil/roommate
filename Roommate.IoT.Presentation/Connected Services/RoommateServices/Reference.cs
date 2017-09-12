@@ -19,7 +19,7 @@ namespace Roommate.IoT.Presentation.RoommateServices {
     public interface IAppointmentService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAppointmentService/GetAppointmentsBetween", ReplyAction="http://tempuri.org/IAppointmentService/GetAppointmentsBetweenResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Roommate.Application.Shared.Appointment.AppointmentUiModel>> GetAppointmentsBetweenAsync(System.DateTime dateFrom, System.DateTime dateTo);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Roommate.Application.Shared.Appointment.AppointmentDTO>> GetAppointmentsBetweenAsync(System.DateTime dateFrom, System.DateTime dateTo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -65,7 +65,7 @@ namespace Roommate.IoT.Presentation.RoommateServices {
                 base(binding, remoteAddress) {
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Roommate.Application.Shared.Appointment.AppointmentUiModel>> GetAppointmentsBetweenAsync(System.DateTime dateFrom, System.DateTime dateTo) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Roommate.Application.Shared.Appointment.AppointmentDTO>> GetAppointmentsBetweenAsync(System.DateTime dateFrom, System.DateTime dateTo) {
             return base.Channel.GetAppointmentsBetweenAsync(dateFrom, dateTo);
         }
         
