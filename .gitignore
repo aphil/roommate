@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /Roommate.Background.ConsoleHost/App.config
 /Roommate.Outlook.Business.Test/App.config
+/Roommate.Application.WebApi/appsettings.json

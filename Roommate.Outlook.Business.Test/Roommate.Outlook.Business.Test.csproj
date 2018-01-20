@@ -52,6 +52,7 @@
       <HintPath>..\packages\MSTest.TestFramework.1.1.18\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
@@ -70,9 +71,9 @@
       <Project>{9a6fffa1-be41-48cb-b87b-452f57091b70}</Project>
       <Name>Roommate.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Roommate.Repository.Outlook\Roommate.Repository.Outlook.csproj">
-      <Project>{47859fdc-cbe1-4e7a-9992-d0fdc6897e56}</Project>
-      <Name>Roommate.Repository.Outlook</Name>
+    <ProjectReference Include="..\Roommate.Repository.Exchange\Roommate.Repository.Exchange.csproj">
+      <Project>{cf90f261-959e-42ac-96a2-435efd6f8f3f}</Project>
+      <Name>Roommate.Repository.Exchange</Name>
     </ProjectReference>
     <ProjectReference Include="..\Roommate.Repository\Roommate.Repository.csproj">
       <Project>{76530071-3ad3-4837-b681-b4a7ddd5613c}</Project>

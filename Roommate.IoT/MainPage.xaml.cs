@@ -30,13 +30,13 @@ namespace App1
 
         private void btnTest_Click(object sender, RoutedEventArgs e)
         {
-            Class1 cla = new Class1();
-            var task = cla.GetAppointments();
-            task.ContinueWith(x =>
-            {
-                var status = x.Status;
+            //Class1 cla = new Class1();
+            //var task = cla.GetAppointments();
+            //task.ContinueWith(x =>
+            //{
+            //    var status = x.Status;
 
-            });
+            //});
         }
     }
 }

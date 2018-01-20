@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using Roommate.Repository.Business;
 using Roommate.Repository.Outlook;
+using System.Configuration;
 
 namespace Roommate.Outlook.Business.Test
 {
@@ -12,7 +13,14 @@ namespace Roommate.Outlook.Business.Test
         [TestMethod]
         public void GetEventsByDates()
         {
-            EchangeCalendarProvider manager = new EchangeCalendarProvider(new ExchangeServiceInitializer());
+
+            EchangeCalendarProvider manager = new EchangeCalendarProvider(new ExchangeServiceInitializer(
+                ConfigurationManager.AppSettings["ExchangeUsername"],
+                ConfigurationManager.AppSettings["ExchangePassword"],
+                ConfigurationManager.AppSettings["ExchangeDomain"],
+                ConfigurationManager.AppSettings["ExchangeUrl"],
+                ConfigurationManager.AppSettings["RoomEmailAddress"]
+                ));
 
             var appointments = manager.GetAppointmentsBetweenDates(new DateTime(2017, 06, 09), new DateTime(2017, 06, 10));
 

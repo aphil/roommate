@@ -107,11 +107,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Connected Services\RoommateServices\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Roommate.IoT.Presentation.rd.xml" />
   </ItemGroup>
@@ -125,33 +120,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\RoommateServices\Roommate.Application.Shared.Appointment1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\RoommateServices\service1.wsdl" />
-    <None Include="Connected Services\RoommateServices\service2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\RoommateServices\service21.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\DataSources\Roommate.Application.Shared.Appointment.AppointmentUiModel.datasource" />
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\RoommateServices\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\RoommateServices\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\RoommateServices\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\RoommateServices\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">

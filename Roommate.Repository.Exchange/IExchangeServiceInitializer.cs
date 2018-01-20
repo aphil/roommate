@@ -9,6 +9,7 @@ namespace Roommate.Repository.Outlook
 {
     public interface IExchangeServiceInitializer
     {
+        string RoomEmailAddress { get; }
         ExchangeService GetService();
     }
 }

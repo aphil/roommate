@@ -9,11 +9,5 @@ namespace TestUWP
 {
     public class Class1
     {
-        public async Task<IEnumerable<AppointmentDTO>> GetAppointments()
-        {
-            Roommate.IoT.Presentation.RoommateServices.AppointmentServiceClient client = new Roommate.IoT.Presentation.RoommateServices.AppointmentServiceClient();
-            IEnumerable<AppointmentDTO> appointments = await client.GetAppointmentsBetweenAsync(DateTime.Now, DateTime.Now);
-            return appointments;
-        }
     }
 }

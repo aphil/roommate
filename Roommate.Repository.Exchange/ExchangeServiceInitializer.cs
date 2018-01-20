@@ -10,16 +10,37 @@ namespace Roommate.Repository.Outlook
 {
     public class ExchangeServiceInitializer : IExchangeServiceInitializer
     {
+        private string _exchangeUsername;
+        private string _exchangePassword;
+        private string _exchangeDomain;
+        private string _exchangeUrl;
+        private string _roomEmailAddress;
+
+        public ExchangeServiceInitializer(string exchangeUsername, 
+                                          string exchangePassword, 
+                                          string exchangeDomain, 
+                                          string exchangeUrl,
+                                          string roomEmailAddress)
+        {
+            _exchangeUsername = exchangeUsername;
+            _exchangePassword = exchangePassword;
+            _exchangeDomain = exchangeDomain;
+            _exchangeUrl = exchangeUrl;
+            _roomEmailAddress = roomEmailAddress;
+        }
+
+        public string RoomEmailAddress => _roomEmailAddress;
+
         public ExchangeService GetService()
         {
             ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2013_SP1);
             service.Credentials = new WebCredentials(
-                ConfigurationManager.AppSettings["ExchangeUsername"],
-                ConfigurationManager.AppSettings["ExchangePassword"],
-                ConfigurationManager.AppSettings["ExchangeDomain"]);
+                _exchangeUsername,
+                _exchangePassword,
+                _exchangeDomain);
 
-            service.Url = new Uri(ConfigurationManager.AppSettings["ExchangeUrl"]);
-          
+            service.Url = new Uri(_exchangeUrl);
+
             return service;
         }
 
