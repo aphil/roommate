@@ -4,6 +4,7 @@ using Moq;
 using Roommate.Repository.Appointments;
 using System.Collections.Generic;
 using Roommate.Business.Appointments;
+using System.Linq;
 
 namespace Roommate.Application.UnitTests.Appointment.AppointmentService
 {
@@ -22,10 +23,15 @@ namespace Roommate.Application.UnitTests.Appointment.AppointmentService
         public void When_AppointmentsExist_Then_AppointmentsAreReturned()
         {
             Mock<IAppointmentRepository> appointmentRepositoryMock = new Mock<IAppointmentRepository>();
-            appointmentRepositoryMock.Setup(x => x.GetAppointmentsBetweenDates(It.IsAny<DateTime>(), It.IsAny<DateTime>())).Returns(new List<AppointmentEntity>());
+            appointmentRepositoryMock.Setup(x => x.GetBetweenDates(It.IsAny<DateTime>(), It.IsAny<DateTime>(), It.IsAny<int>())).Returns(new List<AppointmentEntity>()
+            {
+                new AppointmentEntity("Test", DateTime.Now.AddMinutes(10), DateTime.Now.AddMinutes(30))
+            });
 
             Shared.Appointments.IAppointmentService appointmentService = new Application.Appointments.AppointmentService(appointmentRepositoryMock.Object);
+            var appointments = appointmentService.GetAppointmentsBetween(DateTime.Now, DateTime.Now.AddDays(1));
 
+            Assert.AreEqual(1, appointments.Count());
         }
     }
 }

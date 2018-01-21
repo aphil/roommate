@@ -55,7 +55,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Appointments\AppointmentService\GetAppointmentsBetweenDatesTest.cs" />
+    <Compile Include="Appointments\AppointmentService\GetAppointmentAtDateTest.cs" />
+    <Compile Include="Appointments\AppointmentService\GetAppointmentsBetweenTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

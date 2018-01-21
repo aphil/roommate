@@ -41,7 +41,7 @@ namespace Roommate.Application.WebApi
             switch (appointmentProviderType)
             {
                 case AppointmentProviderTypeEnum.Exchange:
-                    services.AddScoped<IAppointmentRepository, EchangeCalendarProvider>();
+                    services.AddScoped<IAppointmentRepository, ExchangeAppointmentRepository>();
                     services.AddScoped<IExchangeServiceInitializer, ExchangeServiceInitializer>((provider) =>
                         new ExchangeServiceInitializer(Configuration.GetValue<string>(ConfigurationKeys.ExchangeUsername),
                                                         Configuration.GetValue<string>(ConfigurationKeys.ExchangePassword),

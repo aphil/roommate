@@ -11,24 +11,29 @@ using System.Threading.Tasks;
 
 namespace Roommate.Repository.Business
 {
-    public class EchangeCalendarProvider : IAppointmentRepository
+    public class ExchangeAppointmentRepository : IAppointmentRepository
     {
         private IExchangeServiceInitializer _exchangeServiceInitializer;
-        public EchangeCalendarProvider(IExchangeServiceInitializer exchangeServiceInitializer)
+        public ExchangeAppointmentRepository(IExchangeServiceInitializer exchangeServiceInitializer)
         {
             _exchangeServiceInitializer = exchangeServiceInitializer;
         }
 
-        public IEnumerable<AppointmentEntity> GetAppointmentsBetweenDates(DateTime startDate, DateTime endDate)
+        public IEnumerable<AppointmentEntity> GetBetweenDates(DateTime startDate, DateTime endDate, int maxCount)
         {
             ExchangeService service = _exchangeServiceInitializer.GetService();
-            CalendarView cView = new CalendarView(startDate, endDate, 20);
+            CalendarView cView = new CalendarView(startDate, endDate, maxCount);
             cView.PropertySet = new PropertySet(AppointmentSchema.Subject, AppointmentSchema.Start, AppointmentSchema.End);
             FolderId folderid = new FolderId(WellKnownFolderName.Calendar, new Mailbox(_exchangeServiceInitializer.RoomEmailAddress));
 
             FindItemsResults<Microsoft.Exchange.WebServices.Data.Appointment> appointments = service.FindAppointments(folderid, cView);
 
             return appointments.Select(x => EntityFactory.CreateAppointment(x));
+        }
+
+        public AppointmentEntity GetOccuringAtDate(DateTime atDate)
+        {
+            return GetBetweenDates(atDate, atDate, 1).SingleOrDefault();
         }
     }
 }

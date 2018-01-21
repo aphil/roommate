@@ -9,6 +9,7 @@ namespace Roommate.Repository.Appointments
 {
     public interface IAppointmentRepository
     {
-        IEnumerable<AppointmentEntity> GetAppointmentsBetweenDates(DateTime dateFrom, DateTime dateTo);
+        IEnumerable<AppointmentEntity> GetBetweenDates(DateTime dateFrom, DateTime dateTo, int maxCount);
+        AppointmentEntity GetOccuringAtDate(DateTime atDate);
     }
 }
