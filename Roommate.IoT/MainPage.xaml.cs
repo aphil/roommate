@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using TestUWP;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -28,15 +27,14 @@ namespace App1
             this.InitializeComponent();
         }
 
-        private void btnTest_Click(object sender, RoutedEventArgs e)
+        private void ClickMe_Click(object sender, RoutedEventArgs e)
         {
-            //Class1 cla = new Class1();
-            //var task = cla.GetAppointments();
-            //task.ContinueWith(x =>
-            //{
-            //    var status = x.Status;
+            this.HelloMessage.Text = "Hello, Windows 10 IoT Core!";
+        }
 
-            //});
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
         }
     }
 }

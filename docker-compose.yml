@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  roommate.application.webapi:
+    image: roommate.application.webapi
+    build:
+      context: .
+      dockerfile: Roommate.Application.WebApi\Dockerfile
